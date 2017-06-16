@@ -1,0 +1,37 @@
+<div class="row well">
+  <div class="col-md-12">
+    <form class="form-horizontal" [formGroup]="form" (click)="diklik($event,form)">
+      <div class="form-group">
+
+        <div class="row" formGroupName="name">
+          <div class="col-md-6">
+            <label>First Name</label>
+            <input class="form-control" (change)="onChange()" formControlName="first" placeholder="First"></div>
+          <div class="col-md-6">
+            <label>Last Name</label>
+            <input class="form-control" formControlName="last" placeholder="Last"></div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <label>Email</label>
+            <input class="form-control" formControlName="email" placeholder="Email"></div>
+          <div class="col-md-6">
+            <label>Gender</label>
+            <select class="form-control" formControlName="genderId" (change)="onChangeFirstName($event.target.value)">
+                <option *ngFor="let gender of genderArray">
+                  {{gender.name}}
+                  </option>
+              </select>
+            </div>
+        </div>
+
+      </div>
+
+      <button>Submit</button>
+    </form>
+
+    <!--<input #searchItem type="text">
+    <button class="btn btn-primary" (click)="klik()">click</button>-->
+  </div>
+</div>
