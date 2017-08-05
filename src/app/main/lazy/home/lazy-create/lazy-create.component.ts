@@ -2,7 +2,6 @@ import { Component, OnInit, ElementRef, Inject, ViewChild } from '@angular/core'
 import { DataTable } from 'primeng/components/datatable/datatable';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { DataGeneralService } from '../../../../services/main-service/data-general.service'
 import * as _ from 'lodash'
 
 
@@ -16,9 +15,9 @@ export class LazyCreateComponent implements OnInit {
   genderArray
   investasiArray
 
-  @ViewChild ('firstNameValidation') testImportElement: ElementRef;
+  @ViewChild('firstNameValidation') testImportElement: ElementRef;
 
-  constructor(@Inject(FormBuilder) fb: FormBuilder, private _DataGeneralService: DataGeneralService) {
+  constructor( @Inject(FormBuilder) fb: FormBuilder) {
     this.form = fb.group({
       name: fb.group({
         first: ['Nancy', Validators.minLength(2)],
@@ -27,28 +26,17 @@ export class LazyCreateComponent implements OnInit {
       email: [''],
       genderId: ''
     });
-   }
-  ngOnInit() {
-    debugger
-    const xxx = [];
-    this.form.patchValue(xxx);
-    console.log(xxx);
-    this.form.controls["email"].setValue("hanafi");
-    this._DataGeneralService.getGenderData()
-    .subscribe(response=>{
-      response
-      debugger;
-    })
-    //this.investasiArray = this._DataGeneralService.getInvestData();
   }
-  onChange(){
+  ngOnInit() {
+  }
+  onChange() {
+
     console.log(this.form.value)
   }
-  onChangeFirstName(x){
+  onChangeFirstName(x) {
     console.log(x);
   }
-  diklik(event,form){
-    var x = form;
+  diklik(event, form) {
   }
 
 }
