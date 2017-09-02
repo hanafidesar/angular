@@ -1,0 +1,9 @@
+
+footer {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-top: 1px solid rgba(160, 160, 160, .12);
+  padding: 20px;
+  z-index: 109;
+}

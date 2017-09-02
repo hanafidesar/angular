@@ -1,0 +1,23 @@
+<div class="contaner">
+  <md-card class="example-card">
+    <div style="text-align:center;">
+      <h2>Login</h2>
+    </div>
+    <form [formGroup]="entryForm" class="form-validate form-horizontal" (submit)="onSubmit(entryForm.value, $event)" novalidate="">
+      <div class="form-group">
+        <label for="name">Email</label>
+        <input type="email" class="form-control" formControlName="email" required>
+        <app-validation-form [values]="entryForm.controls.email"></app-validation-form>
+      </div>
+
+      <div class="form-group">
+        <label for="alterEgo">Password</label>
+        <input type="password" class="form-control" formControlName="password">
+        <app-validation-form [values]="entryForm.controls.password"></app-validation-form>
+      </div>
+
+      <button type="submit" class="btn btn-success">Submit</button>
+
+    </form>
+  </md-card>
+</div>
