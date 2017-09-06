@@ -27,6 +27,10 @@ const routes: Routes = [
             {
                 path: '',
                 loadChildren: 'app/main/component/dashboard/dashboard.module#DashboardModule'
+            },
+            {
+                path: '',
+                loadChildren: 'app/main/component/user-profile/user-profile.module#UserProfileModule'
             }]
     },
     {

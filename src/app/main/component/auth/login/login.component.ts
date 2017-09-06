@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit(values, event) {
     debugger;
-    this._router.navigate(['/main/create'])
+    this._router.navigate(['/main/dashboard-main'])
     this._loginService.getGenderData(values)
       .subscribe(response => {
       },

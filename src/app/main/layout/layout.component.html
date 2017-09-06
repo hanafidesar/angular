@@ -1,23 +1,10 @@
-<div class="layout-container">
-    <!-- top navbar-->
-    <app-header></app-header>
-    <!-- sidebar-->
-    <!--<app-sidebar></app-sidebar>-->
-    <div (click)="closeSidebar()" class="sidebar-layout-obfuscator"></div>
-    <!-- Main section-->
-    <main class="main-container">
-        <!-- Page content-->
-        <section>
-            <div class="row">
-                <div class="col-md-2">
-                    <app-sidebar></app-sidebar>
-                </div>
-                <div class="col-md-10">
-                    <router-outlet></router-outlet>
-                </div>
-            </div>
-        </section>
-        <!-- Page footer-->
-        <app-footer><span></span></app-footer>
-    </main>
+<div class="wrapper">
+    <div class="sidebar" data-color='red' data-image="">
+        <app-sidebar></app-sidebar>
+        <div class="sidebar-background" style="background-image: url(../assets/img/sidebar-4.jpg)"></div>
+    </div>
+    <div class="main-panel">
+        <app-header></app-header>
+        <router-outlet></router-outlet>
+    </div>
 </div>
