@@ -2,7 +2,7 @@
   <md-card class="example-card">
     <div style="text-align:center;">
       <h2>Login</h2>
-      <i class="fa fa-american-sign-language-interpreting fa-5x" aria-hidden="true"> </i>  
+      <i class="fa fa-american-sign-language-interpreting fa-5x" aria-hidden="true"> </i>
     </div>
     <form [formGroup]="entryForm" class="form-validate form-horizontal" (submit)="onSubmit(entryForm.value, $event)" novalidate="">
       <div class="form-group">
@@ -21,4 +21,9 @@
 
     </form>
   </md-card>
+</div>
+
+<div class="ui-inputgroup">
+  <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+  <input type="text" placeholder="Username">
 </div>

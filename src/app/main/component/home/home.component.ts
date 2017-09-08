@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormArray, FormControl, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
     public myForm: FormGroup;
@@ -34,11 +34,11 @@ export class HomeComponent implements OnInit {
 
         // subscribe to form changes  
         this.subcribeToFormChanges();
-        
+
         // Update single value
         (<FormControl>this.myForm.controls['name'])
             .setValue('John', { onlySelf: true });
-        
+
         // Update form model
         // const people = {
         // 	name: 'Jane',
@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
         // 		postcode: '94043'
         // 	}
         // };
-        
+
         // (<FormGroup>this.myForm)
         //     .setValue(people, { onlySelf: true });
 
@@ -56,7 +56,7 @@ export class HomeComponent implements OnInit {
     subcribeToFormChanges() {
         const myFormStatusChanges$ = this.myForm.statusChanges;
         const myFormValueChanges$ = this.myForm.valueChanges;
-        
+
         myFormStatusChanges$.subscribe(x => this.events.push({ event: 'STATUS_CHANGED', object: x }));
         myFormValueChanges$.subscribe(x => this.events.push({ event: 'VALUE_CHANGED', object: x }));
     }

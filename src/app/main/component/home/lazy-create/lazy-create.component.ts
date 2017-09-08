@@ -38,7 +38,6 @@ export class LazyCreateComponent implements OnInit {
     console.log(x);
   }
   diklik(event, form) {
-    debugger;
   }
 
 }

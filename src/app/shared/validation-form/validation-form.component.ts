@@ -6,13 +6,13 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./validation-form.component.css']
 })
 export class ValidationFormComponent implements OnInit {
+
   @Input() values: any;
+
   constructor() {
-   }
+  }
 
   ngOnInit() {
-    this.values.value
-    debugger;
   }
 
 }

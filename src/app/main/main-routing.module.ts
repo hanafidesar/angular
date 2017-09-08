@@ -1,11 +1,11 @@
-import { ModuleWithProviders } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
+import { HomeComponent } from './component/home/home.component';
+import { LayoutComponent } from './layout/layout.component';
 import { LazyCreateComponent } from './component/home/lazy-create/lazy-create.component';
 import { LazyEditComponent } from './component/home/lazy-edit/lazy-edit.component';
-import { HomeComponent } from './component/home/home.component';
-//layout
-import { LayoutComponent } from './layout/layout.component';
-import { LoginComponent} from './component/auth/login/login.component';
+import { LoginComponent } from './component/auth/login/login.component';
 
 const routes: Routes = [
     {
@@ -37,7 +37,11 @@ const routes: Routes = [
         path: '',
         component: LoginComponent
     },
-]
+];
 
+@NgModule({
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule]
+})
 
-export const routing: ModuleWithProviders = RouterModule.forChild(routes);
+export class MainRoutingModule { }

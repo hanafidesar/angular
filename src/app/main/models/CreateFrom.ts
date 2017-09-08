@@ -1,3 +1,3 @@
 export class CreateFrom {
-    DateBirth:string
+    DateBirth: string;
 }

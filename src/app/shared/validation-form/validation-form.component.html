@@ -1,4 +1,2 @@
-<!--<div *ngIf="values.status == 'INVALID'" class="error-form">{{values.value}} not valid </div>-->
-
 <div class="error-form-style" *ngIf="values.hasError('required') && (values.dirty || values.touched)">*This field is required</div>
 <div class="error-form-style" *ngIf="values.errors?.email">*Email failed</div>

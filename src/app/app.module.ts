@@ -1,32 +1,36 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'; import { HttpModule } from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { DataTableModule as PrimeNgDataTableModule } from 'primeng/components/datatable/datatable';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+import { ListboxModule, CalendarModule } from 'primeng/primeng';
+import { NgModule } from '@angular/core';
+import { SharedModule as PrimeNgSharedModule } from 'primeng/components/common/shared';
 
 import { AppComponent } from './app.component';
-import { routingComponent, AppRoutingModule } from './app.routing';
+import { AppRoutingModule } from './app.routing';
+import { SharedModule } from './shared/shared.module';
 
-import { SharedModule as PrimeNgSharedModule } from 'primeng/components/common/shared';
-import { DataTableModule as PrimeNgDataTableModule } from 'primeng/components/datatable/datatable';
-
-import { ListboxModule, CalendarModule } from 'primeng/primeng';
 @NgModule({
   declarations: [
-    AppComponent,
-    routingComponent,
+    AppComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
+    CalendarModule,
     FormsModule,
+    HttpClientModule,
     HttpModule,
-    AppRoutingModule,
-    PrimeNgSharedModule,
-    PrimeNgDataTableModule,
-    ReactiveFormsModule,
     ListboxModule,
-    CalendarModule
+    PrimeNgDataTableModule,
+    PrimeNgSharedModule,
+    ReactiveFormsModule,
+    SharedModule
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

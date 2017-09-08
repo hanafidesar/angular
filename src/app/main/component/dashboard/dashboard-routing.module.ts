@@ -8,7 +8,7 @@ import { DashboardMainComponent } from './dashboard-main/dashboard-main.componen
 
 const routes: Routes = [
     {
-        path: 'dashboard-main',        
+        path: 'dashboard-main',
         data: {
             title: 'Empty Product'
         },
@@ -19,7 +19,7 @@ const routes: Routes = [
                 data: {
                     title: 'Empty Product'
                 }
-            } 
+            }
         ]
     }
 ];

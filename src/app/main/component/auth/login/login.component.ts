@@ -1,22 +1,21 @@
-// angular library
-import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
-// 3rd library
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { CustomValidators } from 'ng2-validation';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
-// service
 import { LoginService } from '../../../services/auth-service/login.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 
 export class LoginComponent implements OnInit {
+
   entryForm: FormGroup;
+
   constructor(
     private _router: Router,
     private _formBuilder: FormBuilder,
@@ -35,13 +34,15 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(values, event) {
-    debugger;
-    this._router.navigate(['/main/dashboard-main'])
-    this._loginService.getGenderData(values)
+  }
+
+  validateLogin(){
+    this._loginService.getGenderData()
       .subscribe(response => {
+        this._router.navigate(['/main/dashboard-main']);
       },
       (error) => {
-      })
+      });
   }
 
 }
