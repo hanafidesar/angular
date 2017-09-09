@@ -34,9 +34,15 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(values, event) {
+    this._loginService.getGenderData()
+      .subscribe(response => {
+        this._router.navigate(['/main/dashboard-main']);
+      },
+      (error) => {
+      });
   }
 
-  validateLogin(){
+  validateLogin() {
     this._loginService.getGenderData()
       .subscribe(response => {
         this._router.navigate(['/main/dashboard-main']);

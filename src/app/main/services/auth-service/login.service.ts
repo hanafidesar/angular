@@ -24,6 +24,6 @@ export class LoginService {
 
   getGenderData() {
     const headers = this.getDefaultHeaders();
-    return this.http.get('http://localhost:3000/token');
+    return this.http.get('http://private-e6d027-hanafi.apiary-mock.com/token');
   }
 }
