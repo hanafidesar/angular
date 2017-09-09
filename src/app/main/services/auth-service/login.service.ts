@@ -1,10 +1,17 @@
-import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
+import { Injectable } from '@angular/core';
+import { LocalStorageService } from 'angular-2-local-storage';
+import { Observable } from 'rxjs/Observable';
 
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
 @Injectable()
 export class LoginService {
 
-  constructor(private http: Http) { }
+  constructor(
+    private _http: Http,
+    private _localStorage: LocalStorageService) { }
 
   getDefaultHeaders(): Headers {
     const headers = new Headers();
@@ -22,8 +29,16 @@ export class LoginService {
     return headers;
   }
 
-  getGenderData() {
+  login() {
     const headers = this.getDefaultHeaders();
-    return this.http.get('http://private-e6d027-hanafi.apiary-mock.com/token');
+    return this._http.get('http://private-e6d027-hanafi.apiary-mock.com/token')
+      .map(response => response.json())
+      .do(response => {
+        this._localStorage.set('data', JSON.stringify(response));
+      });
+  }
+
+  logout() {
+    this._localStorage.clearAll();
   }
 }

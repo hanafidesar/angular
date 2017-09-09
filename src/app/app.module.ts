@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { ListboxModule, CalendarModule } from 'primeng/primeng';
+import { LocalStorageModule } from 'angular-2-local-storage';
 import { NgModule } from '@angular/core';
 import { SharedModule as PrimeNgSharedModule } from 'primeng/components/common/shared';
 
@@ -25,6 +26,10 @@ import { SharedModule } from './shared/shared.module';
     HttpClientModule,
     HttpModule,
     ListboxModule,
+    LocalStorageModule.withConfig({
+      prefix: 'my-app',
+      storageType: 'localStorage'
+    }),
     PrimeNgDataTableModule,
     PrimeNgSharedModule,
     ReactiveFormsModule,

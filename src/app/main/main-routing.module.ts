@@ -9,11 +9,15 @@ import { LoginComponent } from './component/auth/login/login.component';
 
 const routes: Routes = [
     {
+        path: '',
+        component: LoginComponent
+    },
+    {
         path: 'main',
         component: LayoutComponent,
         children: [
             {
-                path: '',
+                path: 'lazy',
                 component: LazyCreateComponent
             },
             {
@@ -34,7 +38,7 @@ const routes: Routes = [
             }]
     },
     {
-        path: '',
+        path: 'login',
         component: LoginComponent
     },
 ];

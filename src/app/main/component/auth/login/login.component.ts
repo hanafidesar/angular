@@ -24,8 +24,8 @@ export class LoginComponent implements OnInit {
 
   buildForm() {
     this.entryForm = this._formBuilder.group({
-      email: ['', [Validators.required, CustomValidators.email]],
-      password: ['', Validators.required]
+      email: ['hanafi.desar@gmail.com', [Validators.required, CustomValidators.email]],
+      password: ['123456', Validators.required]
     });
   }
 
@@ -34,16 +34,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(values, event) {
-    this._loginService.getGenderData()
-      .subscribe(response => {
-        this._router.navigate(['/main/dashboard-main']);
-      },
-      (error) => {
-      });
-  }
-
-  validateLogin() {
-    this._loginService.getGenderData()
+    this._loginService.login()
       .subscribe(response => {
         this._router.navigate(['/main/dashboard-main']);
       },

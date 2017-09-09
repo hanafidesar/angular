@@ -1,5 +1,8 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { Router } from '@angular/router';
+
+import { LoginService } from '../../services/auth-service/login.service';
 import { ROUTES } from '../sidebar/sidebar.component';
 
 @Component({
@@ -14,14 +17,18 @@ export class HeaderComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
 
-    constructor(location: Location, private element: ElementRef) {
-        this.location = location;
+    constructor(
+        _location: Location,
+        private _loginService: LoginService,
+        private _element: ElementRef,
+        private _router: Router) {
+        this.location = _location;
         this.sidebarVisible = false;
     }
 
     ngOnInit() {
         this.listTitles = ROUTES.filter(listTitle => listTitle);
-        const navbar: HTMLElement = this.element.nativeElement;
+        const navbar: HTMLElement = this._element.nativeElement;
         this.toggleButton = navbar.getElementsByClassName('navbar-toggle')[0];
     }
 
@@ -66,5 +73,10 @@ export class HeaderComponent implements OnInit {
             }
         }
         return 'Dashboard';
+    }
+
+    onLogOut() {
+        this._loginService.logout();
+        this._router.navigate(['/login']);
     }
 }
