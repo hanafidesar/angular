@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ToastService } from './toast/toast.service';
 import { ValidationFormComponent } from './validation-form/validation-form.component';
 
 @NgModule({
@@ -7,7 +8,7 @@ import { ValidationFormComponent } from './validation-form/validation-form.compo
     CommonModule
   ],
   declarations: [ValidationFormComponent],
-  providers: [],
+  providers: [ToastService],
   bootstrap: [],
   exports: [ValidationFormComponent]
 })

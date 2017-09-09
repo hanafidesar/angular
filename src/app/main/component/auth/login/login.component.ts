@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { CustomValidators } from 'ng2-validation';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-
 import { LoginService } from '../../../services/auth-service/login.service';
+import { Router } from '@angular/router';
+import { ToastService } from '../../../../shared/toast/toast.service';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +19,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private _router: Router,
     private _formBuilder: FormBuilder,
-    private _loginService: LoginService
+    private _loginService: LoginService,
+    private _toastService: ToastService
   ) { }
 
   buildForm() {
@@ -39,6 +40,7 @@ export class LoginComponent implements OnInit {
         this._router.navigate(['/main/dashboard-main']);
       },
       (error) => {
+        this._toastService.showToast(error);
       });
   }
 
