@@ -6,16 +6,16 @@ import { Injectable } from '@angular/core';
 export class ToastService {
 
   constructor() { }
-  
-  showToast(error) {
+
+  showToast(errorInfo) {
     SnackBar.show({
       text: 'Login Error', actionText: '<div>see</div>', pos: 'top-right',
       onActionClick: () => {
         swal(
           'Can not Login?',
-          'I think the problem is on your connection, make sure the connection is running as it should',
+          errorInfo,
           'question'
-        )
+        );
       }
     });
   }

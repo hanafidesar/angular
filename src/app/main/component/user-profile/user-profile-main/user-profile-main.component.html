@@ -13,18 +13,22 @@
                             <div [formGroup]="entryForm" class="row">
                                 <div class="col-md-5">
                                     <div class="form-group form-black label-floating is-empty">
-                                        <label class="control-label">Company (disabled)</label>
-                                        <input pInputText pTooltip="Enter your username" tooltipEvent="hover" tooltipPosition="top" type="text" class="form-control">
+                                        <!-- <label class="control-label">Company (disabled)</label> -->
+                                        <label class="label-reguler">Company (disabled)</label>
+                                        <input pInputText pTooltip="Enter your username" tooltipEvent="hover" tooltipPosition="top" type="text" class="form-control"
+                                            disabled>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group form-black label-floating is-empty">
+                                        <label class="label-reguler">Username</label>
                                         <input type="text" class="form-control" formControlName="username" placeholder="Username">
                                         <app-validation-form [values]="entryForm.controls.username"></app-validation-form>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group form-black label-floating is-empty">
+                                        <label class="label-reguler">Email</label>
                                         <input type="email" class="form-control" formControlName="email" placeholder="Email">
                                         <app-validation-form [values]="entryForm.controls.email"></app-validation-form>
                                     </div>
@@ -34,11 +38,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group form-black label-floating is-empty">
+                                        <label class="label-reguler">Firstname</label>
                                         <input type="text" class="form-control" placeholder="First Name">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group form-black label-floating is-empty">
+                                        <label class="label-reguler">Lastname</label>
                                         <input type="text" class="form-control" placeholder="Last Name">
                                     </div>
                                 </div>
@@ -47,6 +53,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group form-black label-floating is-empty">
+                                        <label class="label-reguler">Address</label>
                                         <input type="text" class="form-control" placeholder="Address">
                                     </div>
                                 </div>
@@ -55,19 +62,19 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group form-black label-floating is-empty">
-                                        <label class="control-label">City</label>
+                                        <label class="label-reguler">City</label>
                                         <input type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group form-black label-floating is-empty">
-                                        <label class="control-label">Country</label>
+                                        <label class="label-reguler">Country</label>
                                         <input type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group form-black label-floating is-empty">
-                                        <label class="control-label">Postal Code</label>
+                                        <label class="label-reguler">Postal Code</label>
                                         <input type="text" class="form-control">
                                     </div>
                                 </div>
@@ -103,8 +110,7 @@
                         <h6 class="category text-gray">Web Programmer</h6>
                         <h4 class="card-title">Hanafi Desar</h4>
                         <p class="card-content">
-                            Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye
-                            I love Rick Owens’ bed design but the back is...
+                            If You Are Working On Something That You Really Care About, You Don’t Have To Be Pushed. The Vision Pulls You.”- Steve Jobs
                         </p>
                         <a href="#pablo" class="btn btn-danger btn-round">Follow</a>
                     </div>

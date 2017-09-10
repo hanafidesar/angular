@@ -37,7 +37,18 @@ export class LoginComponent implements OnInit {
     this.buildForm();
   }
 
-  onSubmit(values, event) {
+  onSubmit(value, event) {
+    if (value.email === 'hanafi.desar@gmail.com' || value.email === '123456') {
+      this.validationLogin(value);
+    }
+
+    else {
+      const errorInfo = 'Failed username or password';
+      this._toastService.showToast(errorInfo);
+    }
+  }
+
+  validationLogin(value) {
     this._spinnerService.show('app-login');
     this._loginService.login()
       .subscribe(response => {
@@ -46,7 +57,8 @@ export class LoginComponent implements OnInit {
       },
       (error) => {
         this._spinnerService.hide('app-login');
-        this._toastService.showToast(error);
+        const errorInfo = 'I think the problem is on your connection, make sure the connection is running as it should';
+        this._toastService.showToast(errorInfo);
       });
   }
 

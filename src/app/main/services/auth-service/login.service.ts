@@ -1,7 +1,6 @@
 import { Http, Headers, Response } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from 'angular-2-local-storage';
-import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';

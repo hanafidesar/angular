@@ -24,12 +24,11 @@
 </div>
 
 <div class="container" style="width:400px !important;">
-    
       <div class="d-100vh-va-middle">
           <div class="card" style="width:100%">
               <div class="card-header" data-background-color="red">
-                <h4 class="title">Employees Stats</h4>
-                <p class="category">New employees on 15th September, 2016</p>
+                <h4 class="title">Login</h4>
+                <p class="category">Welcome to my Web Application</p>
               </div>
               <div class="card-content form-style">
                 <form [formGroup]="entryForm" class="form-validate form-horizontal row" (submit)="onSubmit(entryForm.value, $event)" novalidate="">
@@ -41,7 +40,7 @@
                     <app-validation-form [values]="entryForm.controls.email"></app-validation-form>
                   </div>
                   <div class="group">
-                    <input type="" class="form-control" formControlName="password" class="inputMaterial" required>
+                    <input type="password" class="form-control" formControlName="password" class="inputMaterial" required>
                     <span class="highlight"></span>
                     <span class="bar"></span>
                     <label>Password</label>

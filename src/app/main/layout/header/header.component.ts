@@ -75,6 +75,10 @@ export class HeaderComponent implements OnInit {
         return 'Dashboard';
     }
 
+    onDashboard() {
+        this._router.navigate(['/main/dashboard-main']);
+    }
+
     onLogOut() {
         this._loginService.logout();
         this._router.navigate(['/login']);
