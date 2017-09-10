@@ -1,24 +1,59 @@
-<div class="contaner">
-  <md-card class="example-card">
-    <div style="text-align:center;">
-      <h2>Login</h2>
-      <i class="fa fa-american-sign-language-interpreting fa-5x" aria-hidden="true"> </i>
+<div class="col-lg-6 col-md-12" style="height:100%; margin-top:10%;">
+
+</div>
+
+<div id="container-floating">
+  <a href="https://plus.google.com/u/0/108595208326923715775" target="_blank"><span class="profile-name">Hanafi</span></a>
+  <div id="container-a">
+    <div id="badge">
     </div>
-    <form [formGroup]="entryForm" class="form-validate form-horizontal" (submit)="onSubmit(entryForm.value, $event)" novalidate="">
-      <div class="form-group">
-        <label for="name">Email</label>
-        <input type="email" class="form-control" formControlName="email" required>
-        <app-validation-form [values]="entryForm.controls.email"></app-validation-form>
+    <div id="letter">
+      <a href="https://plus.google.com/u/0/108595208326923715775"><span>H</span></a>
+    </div>
+  </div>
+  <a href="https://id.linkedin.com/in/hanafi-desar-a3191491" target="_blank">
+    <div class="nds nd1" data-toggle="tooltip" data-placement="left" data-original-title="LinkedIn"></div>
+  </a>
+  <a href="https://github.com/hanafidesar/" target="_blank">
+    <div class="nds nd2" data-toggle="tooltip" data-placement="left" data-original-title="Github"></div>
+  </a>
+  <a href="https://gitlab.com/hanafidesar/" target="_blank">
+    <div class="nds nd4" data-toggle="tooltip" data-placement="left" data-original-title="G+"></div>
+  </a>
+
+</div>
+
+<div class="container" style="width:400px !important;">
+    
+      <div class="d-100vh-va-middle">
+          <div class="card" style="width:100%">
+              <div class="card-header" data-background-color="red">
+                <h4 class="title">Employees Stats</h4>
+                <p class="category">New employees on 15th September, 2016</p>
+              </div>
+              <div class="card-content form-style">
+                <form [formGroup]="entryForm" class="form-validate form-horizontal row" (submit)="onSubmit(entryForm.value, $event)" novalidate="">
+                  <div class="group">
+                    <input class="form-control" formControlName="email" class="inputMaterial" type="" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Username</label>
+                    <app-validation-form [values]="entryForm.controls.email"></app-validation-form>
+                  </div>
+                  <div class="group">
+                    <input type="" class="form-control" formControlName="password" class="inputMaterial" required>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Password</label>
+                    <app-validation-form [values]="entryForm.controls.password"></app-validation-form>
+                  </div>
+          
+                  <div class="group-btn">
+                  <button class="btn btn-primary" style="width: 100%; background-color:#337ab7 !important; border-color:#2e6da4;"  type="submit">Login</button>
+                  </div>
+          
+                </form>
+              </div>
+            </div>
       </div>
-
-      <div class="form-group">
-        <label for="alterEgo">Password</label>
-        <input type="password" class="form-control" formControlName="password">
-        <app-validation-form [values]="entryForm.controls.password"></app-validation-form>
-      </div>
-
-      <button type="submit" class="btn btn-success">Submit</button>
-
-    </form>
-  </md-card>
 </div>
