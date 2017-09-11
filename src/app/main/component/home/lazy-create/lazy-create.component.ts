@@ -3,7 +3,7 @@ import { DataTable } from 'primeng/components/datatable/datatable';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CustomValidators } from 'ng2-validation';
 
-import * as _ from 'lodash'
+import * as _ from 'lodash';
 
 
 @Component({
@@ -13,8 +13,8 @@ import * as _ from 'lodash'
 })
 export class LazyCreateComponent implements OnInit {
   form: FormGroup;
-  genderArray
-  investasiArray
+  genderArray;
+  investasiArray;
 
   @ViewChild('firstNameValidation') testImportElement: ElementRef;
 
@@ -32,7 +32,7 @@ export class LazyCreateComponent implements OnInit {
   }
   onChange() {
 
-    console.log(this.form.value)
+    console.log(this.form.value);
   }
   onChangeFirstName(x) {
     console.log(x);

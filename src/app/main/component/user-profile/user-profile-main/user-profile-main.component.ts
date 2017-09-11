@@ -1,31 +1,61 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CustomValidators } from 'ng2-validation';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { Profile } from '../../../models/profile';
+import { ProfileDataService } from '../../../services/main-service/profile-data.service';
+import { SpinnerService } from '../../../../shared/spinner/spinner.service';
 
 @Component({
   selector: 'app-user-profile-main',
   templateUrl: './user-profile-main.component.html',
   styleUrls: ['./user-profile-main.component.scss']
 })
+
 export class UserProfileMainComponent implements OnInit {
+
   entryForm: FormGroup;
+  profile: Profile;
 
   constructor(
     private _formBuilder: FormBuilder,
+    private _profileDataService: ProfileDataService,
+    private _spinnerService: SpinnerService
   ) { }
 
   ngOnInit() {
     this.buildForm();
+    this.loadData();
   }
 
   buildForm() {
     this.entryForm = this._formBuilder.group({
+      company: [''],
       username: ['', Validators.required],
-      email: ['', [Validators.required, CustomValidators.email]]
+      email: ['', [Validators.required, CustomValidators.email]],
+      firstname: [''],
+      lastname: [''],
+      address: [''],
+      city: [''],
+      country: [''],
+      postalCode: [''],
+      aboutMe:['']
     });
   }
 
-  klik(){
-    this.entryForm
+  loadData() {
+    debugger;
+    this._spinnerService.show('app-user-profile-main');
+    this._profileDataService.getProfile()
+      .subscribe(response => {
+        this._spinnerService.hide('app-user-profile-main');
+        this.profile = response.data;
+        this.entryForm.patchValue(this.profile);
+      },
+      (error) => {
+        this._spinnerService.hide('app-user-profile-main');
+      });
+  }
+  klik() {
   }
 }

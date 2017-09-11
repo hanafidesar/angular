@@ -9,26 +9,26 @@
                     </div>
 
                     <div class="card-content">
-                        <form>
-                            <div [formGroup]="entryForm" class="row">
+                        <form [formGroup]="entryForm">
+                            <div class="row">
                                 <div class="col-md-5">
                                     <div class="form-group form-black label-floating is-empty">
-                                        <!-- <label class="control-label">Company (disabled)</label> -->
-                                        <label class="label-reguler">Company (disabled)</label>
-                                        <input pInputText pTooltip="Enter your username" tooltipEvent="hover" tooltipPosition="top" type="text" class="form-control"
+                                        <!-- <div class="control-label">Company (disabled)</label> -->
+                                        <div class="label-reguler">Company (disabled)</div>
+                                        <input pInputText pTooltip="Enter your username"  formControlName="company" tooltipEvent="hover" tooltipPosition="top" type="text" class="form-control"
                                             disabled>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group form-black label-floating is-empty">
-                                        <label class="label-reguler">Username</label>
+                                        <div class="label-reguler">Username</div>
                                         <input type="text" class="form-control" formControlName="username" placeholder="Username">
                                         <app-validation-form [values]="entryForm.controls.username"></app-validation-form>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group form-black label-floating is-empty">
-                                        <label class="label-reguler">Email</label>
+                                        <div class="label-reguler">Email</div>
                                         <input type="email" class="form-control" formControlName="email" placeholder="Email">
                                         <app-validation-form [values]="entryForm.controls.email"></app-validation-form>
                                     </div>
@@ -38,14 +38,14 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group form-black label-floating is-empty">
-                                        <label class="label-reguler">Firstname</label>
-                                        <input type="text" class="form-control" placeholder="First Name">
+                                        <div class="label-reguler">firstname</div>
+                                        <input type="text" formControlName="firstname" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group form-black label-floating is-empty">
-                                        <label class="label-reguler">Lastname</label>
-                                        <input type="text" class="form-control" placeholder="Last Name">
+                                        <div class="label-reguler">Lastname</div>
+                                        <input type="text" formControlName="lastname" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -53,8 +53,8 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group form-black label-floating is-empty">
-                                        <label class="label-reguler">Address</label>
-                                        <input type="text" class="form-control" placeholder="Address">
+                                        <div class="label-reguler">Address</div>
+                                        <input type="text" formControlName="address" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -62,20 +62,20 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group form-black label-floating is-empty">
-                                        <label class="label-reguler">City</label>
-                                        <input type="text" class="form-control">
+                                        <div class="label-reguler">City</div>
+                                        <input type="text" formControlName="city" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group form-black label-floating is-empty">
-                                        <label class="label-reguler">Country</label>
-                                        <input type="text" class="form-control">
+                                        <div class="label-reguler">Country</div>
+                                        <input type="text" formControlName="country" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group form-black label-floating is-empty">
-                                        <label class="label-reguler">Postal Code</label>
-                                        <input type="text" class="form-control">
+                                        <div class="label-reguler">Postal Code</div>
+                                        <input type="text" formControlName="postalCode" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -83,10 +83,9 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>About Me</label>
                                         <div class="form-group form-black label-floating is-empty">
-                                            <label class="control-label"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
-                                            <textarea class="form-control" rows="5"></textarea>
+                                            <div class="label-reguler">About Me</div>
+                                            <textarea class="form-control" formControlName="aboutMe" rows="5"></textarea>
                                         </div>
                                     </div>
                                 </div>
