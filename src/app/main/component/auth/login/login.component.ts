@@ -3,7 +3,7 @@ import { CustomValidators } from 'ng2-validation';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { LoginService } from '../../../services/auth-service/login.service';
+import { AuthService } from '../../../../core/auth.service';
 import { SpinnerService } from '../../../../shared/spinner/spinner.service';
 import { ToastService } from '../../../../shared/toast/toast.service';
 
@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private _router: Router,
     private _formBuilder: FormBuilder,
-    private _loginService: LoginService,
+    private _authService: AuthService,
     private _spinnerService: SpinnerService,
     private _toastService: ToastService
   ) { }
@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
 
   validationLogin(value) {
     this._spinnerService.show('app-login');
-    this._loginService.login()
+    this._authService.login()
       .subscribe(response => {
         this._spinnerService.hide('app-login');
         this._router.navigate(['/main/dashboard-main']);

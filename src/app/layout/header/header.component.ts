@@ -2,7 +2,7 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { Router } from '@angular/router';
 
-import { LoginService } from '../../services/auth-service/login.service';
+import { AuthService } from '../../core/auth.service';
 import { ROUTES } from '../sidebar/sidebar.component';
 
 @Component({
@@ -12,6 +12,7 @@ import { ROUTES } from '../sidebar/sidebar.component';
 })
 
 export class HeaderComponent implements OnInit {
+
     private listTitles: any[];
     location: Location;
     private toggleButton: any;
@@ -19,7 +20,7 @@ export class HeaderComponent implements OnInit {
 
     constructor(
         _location: Location,
-        private _loginService: LoginService,
+        private _authService: AuthService,
         private _element: ElementRef,
         private _router: Router) {
         this.location = _location;
@@ -80,7 +81,7 @@ export class HeaderComponent implements OnInit {
     }
 
     onLogOut() {
-        this._loginService.logout();
+        this._authService.logout();
         this._router.navigate(['/login']);
     }
 }

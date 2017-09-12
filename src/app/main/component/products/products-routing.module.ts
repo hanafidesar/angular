@@ -4,22 +4,22 @@ import {
     RouterModule
 } from '@angular/router';
 
-import { UserProfileMainComponent } from './user-profile-main/user-profile-main.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 const routes: Routes = [
     {
-        path: 'user-profile-main',
+        path: 'product-list',
         data: {
-            title: 'User Profile'
+            title: 'Product'
         },
         children: [
             {
                 path: '',
-                component: UserProfileMainComponent,
+                component: ProductListComponent,
                 data: {
-                    title: 'User Profile'
+                    title: 'Product List'
                 }
-            } 
+            }
         ]
     }
 ];
@@ -29,4 +29,4 @@ const routes: Routes = [
     exports: [RouterModule]
 })
 
-export class UserProfileRoutingModule { }
+export class ProductRoutingModule { }

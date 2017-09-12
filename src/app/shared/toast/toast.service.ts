@@ -1,11 +1,14 @@
 import swal from 'sweetalert2';
 import * as SnackBar from 'node-snackbar';
 import { Injectable } from '@angular/core';
+import { SweetalertService } from '../sweetalert/sweetalert.service';
 
 @Injectable()
 export class ToastService {
 
-  constructor() { }
+  constructor(
+    private _sweetalertService: SweetalertService
+  ) { }
 
   showToast(errorInfo) {
     SnackBar.show({

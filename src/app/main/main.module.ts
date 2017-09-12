@@ -5,13 +5,9 @@ import { MdCardModule } from '@angular/material';
 import { NgModule } from '@angular/core';
 import { PaginatorModule as PrimeNgPaginatorModule } from 'primeng/components/paginator/paginator';
 
-import { HomeComponent } from './component/home/home.component';
-import { LayoutModule } from './layout/layout.module';
-import { LazyCreateComponent } from './component/home/lazy-create/lazy-create.component';
-import { LazyDeleteComponent } from './component/home/lazy-delete/lazy-delete.component';
-import { LazyEditComponent } from './component/home/lazy-edit/lazy-edit.component';
+import { LayoutModule } from '../layout/layout.module';
 import { LoginComponent } from './component/auth/login/login.component';
-import { LoginService } from './services/auth-service/login.service';
+import { AuthService } from '../core/auth.service';
 import { MainRoutingModule } from './main-routing.module';
 import { ProfileDataService } from './services/main-service/profile-data.service';
 import { SharedModule } from '../shared/shared.module';
@@ -28,13 +24,9 @@ import { SharedModule } from '../shared/shared.module';
     SharedModule
   ],
   declarations: [
-    HomeComponent,
-    LazyCreateComponent,
-    LazyDeleteComponent,
-    LazyEditComponent,
     LoginComponent],
-  providers: [LoginService, ProfileDataService],
-  bootstrap: [HomeComponent, LoginComponent]
+  providers: [AuthService, ProfileDataService],
+  bootstrap: [LoginComponent]
 })
 
 export class MainModule { }

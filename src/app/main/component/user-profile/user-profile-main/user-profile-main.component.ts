@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Profile } from '../../../models/profile';
 import { ProfileDataService } from '../../../services/main-service/profile-data.service';
 import { SpinnerService } from '../../../../shared/spinner/spinner.service';
+import { SweetalertService } from '../../../../shared/sweetalert/sweetalert.service';
 
 @Component({
   selector: 'app-user-profile-main',
@@ -20,7 +21,8 @@ export class UserProfileMainComponent implements OnInit {
   constructor(
     private _formBuilder: FormBuilder,
     private _profileDataService: ProfileDataService,
-    private _spinnerService: SpinnerService
+    private _spinnerService: SpinnerService,
+    private _sweetalertService: SweetalertService
   ) { }
 
   ngOnInit() {
@@ -56,6 +58,13 @@ export class UserProfileMainComponent implements OnInit {
         this._spinnerService.hide('app-user-profile-main');
       });
   }
-  klik() {
+
+  onFollow() {
+    this._sweetalertService.notWorkingYet();
   }
+
+  onUpdate() {
+    this._sweetalertService.notWorkingYet();
+  }
+
 }
