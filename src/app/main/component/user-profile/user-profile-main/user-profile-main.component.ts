@@ -49,7 +49,7 @@ export class UserProfileMainComponent implements OnInit {
     this._profileDataService.getProfile()
       .subscribe(response => {
         this._spinnerService.hide('app-user-profile-main');
-        this.profile = response.data;
+        this.profile = response;
         this.entryForm.patchValue(this.profile);
       },
       (error) => {
