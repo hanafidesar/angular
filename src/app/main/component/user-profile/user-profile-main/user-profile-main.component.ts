@@ -41,12 +41,11 @@ export class UserProfileMainComponent implements OnInit {
       city: [''],
       country: [''],
       postalCode: [''],
-      aboutMe:['']
+      aboutMe: ['']
     });
   }
 
   loadData() {
-    debugger;
     this._spinnerService.show('app-user-profile-main');
     this._profileDataService.getProfile()
       .subscribe(response => {

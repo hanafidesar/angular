@@ -1,5 +1,4 @@
 import { CommonModule } from '@angular/common';
-import { DataTableModule as PrimeNgDataTableModule } from 'primeng/components/datatable/datatable';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MdCardModule } from '@angular/material';
 import { NgModule } from '@angular/core';
@@ -10,6 +9,7 @@ import { LoginComponent } from './component/auth/login/login.component';
 import { AuthService } from '../core/auth.service';
 import { MainRoutingModule } from './main-routing.module';
 import { ProfileDataService } from './services/main-service/profile-data.service';
+import { ProductService } from './services/main-service/product.service';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
@@ -25,7 +25,10 @@ import { SharedModule } from '../shared/shared.module';
   ],
   declarations: [
     LoginComponent],
-  providers: [AuthService, ProfileDataService],
+  providers: [
+    AuthService,
+    ProfileDataService,
+    ProductService],
   bootstrap: [LoginComponent]
 })
 

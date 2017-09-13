@@ -9,7 +9,7 @@ export class SweetalertService {
   notWorkingYet() {
     swal(
       'Sorry',
-      'Aplication not working yet',
+      'This function not working yet',
       'info'
     );
   }
@@ -17,7 +17,7 @@ export class SweetalertService {
   follow() {
     swal(
       'Sorry',
-      'Aplication not working yet',
+      'This function not working yet',
       'info'
     );
   }
@@ -25,7 +25,7 @@ export class SweetalertService {
   error() {
     swal(
       'Sorry',
-      'Aplication not working yet',
+      'This function not working yet',
       'info'
     );
   }
