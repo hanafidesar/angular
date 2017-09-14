@@ -21,11 +21,9 @@ export class ProductListComponent implements OnInit {
       .subscribe(response => {
         this._spinnerService.hide('app-product-list');
         this.product = response;
-        debugger;
       },
       (error) => {
         this._spinnerService.hide('app-product-list');
-        debugger;
       }
       )
   }

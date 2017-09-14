@@ -1,0 +1,11 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <agm-map [latitude]="lat" [longitude]="lng" (mapClick)="mapClicked($event)" [zoom]="12">
+                <agm-marker *ngFor="let m of markers; let i = index" [latitude]="m.lat" [longitude]="m.lng" [label]="m.label" [markerDraggable]="m.draggable"
+                    (dragEnd)="markerDragEnd(m, $event)">
+                </agm-marker>
+            </agm-map>
+        </div>
+    </div>
+</div>

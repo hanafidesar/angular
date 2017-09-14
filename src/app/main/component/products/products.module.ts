@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
-import { ButtonModule } from 'primeng/primeng';
-
+import { ButtonModule } from 'primeng/components/button/button';
 import { CommonModule } from '@angular/common';
+import { DataTableModule } from 'primeng/components/datatable/datatable';
+import { NgModule } from '@angular/core';
+import { SharedModule } from 'primeng/components/common/shared';
 
-import { DataTableModule, SharedModule } from 'primeng/primeng';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductRoutingModule } from './products-routing.module';
 
