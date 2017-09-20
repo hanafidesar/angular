@@ -1,0 +1,39 @@
+/* .form-control {
+    border-bottom: 1px solid #D2D2D2 !important;
+  } */
+
+  .btn-create {
+    position:absolute;
+    z-index:1;
+    border:1px solid #e73e3a;
+    width:70px;
+    height:70px;
+    border-radius:100px;
+    background:white
+}
+
+.btn-close {
+    position:absolute;
+    z-index:1;
+    border:1px solid #b1a5a5;
+    width:70px;
+    height:70px;
+    border-radius:100px;
+    background:white
+}
+
+.fa-create {
+    cursor : pointer;
+    font-size: 60px;
+    color: #e8403d;
+    margin-left: 8px;
+    margin-top: 4px;
+}
+
+.fa-close {
+    cursor : pointer;
+    font-size: 60px;
+    color: #b1a5a5;
+    margin-left: 8px;
+    margin-top: 4px;
+}

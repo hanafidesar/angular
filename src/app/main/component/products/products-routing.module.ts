@@ -4,11 +4,13 @@ import {
     RouterModule
 } from '@angular/router';
 
+import { ProductCreateComponent } from './product-create/product-create.component';
+import { ProductEditComponent } from './product-edit/product-edit.component';
 import { ProductListComponent } from './product-list/product-list.component';
 
 const routes: Routes = [
     {
-        path: 'product-list',
+        path: 'product',
         data: {
             title: 'Product'
         },
@@ -18,6 +20,21 @@ const routes: Routes = [
                 component: ProductListComponent,
                 data: {
                     title: 'Product List'
+                }
+            },
+            {
+                path: 'product-create',
+                component: ProductCreateComponent,
+                data: {
+                    title: 'Product Create'
+                }
+            },
+            {
+                path: ':id/edit',
+                component: ProductEditComponent,
+                data: {
+                    title: 'Product Edit',
+                    editing: true
                 }
             }
         ]

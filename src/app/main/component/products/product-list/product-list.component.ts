@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductGet } from '../../../models/product';
 import { ProductService } from '../../../services/main-service/product.service';
+import { Router } from '@angular/router';
 import { SpinnerService } from '../../../../shared/spinner/spinner.service';
 
 @Component({
@@ -9,15 +11,16 @@ import { SpinnerService } from '../../../../shared/spinner/spinner.service';
 })
 
 export class ProductListComponent implements OnInit {
-  product: any;
+  product: ProductGet;
   constructor(
     private _productService: ProductService,
+    private _router: Router,
     private _spinnerService: SpinnerService
   ) { }
 
   ngOnInit() {
     this._spinnerService.show('app-product-list');
-    const x = this._productService.getProductList()
+    const x = this._productService.getProducts()
       .subscribe(response => {
         this._spinnerService.hide('app-product-list');
         this.product = response;
@@ -28,4 +31,12 @@ export class ProductListComponent implements OnInit {
       )
   }
 
+  goCreateProduct() {
+    this._router.navigate(['/main/product/product-create']);
+  }
+
+  goEditProduct(id) {
+    this._router.navigate(['/main/product', id, 'edit']);
+  }
 }
+

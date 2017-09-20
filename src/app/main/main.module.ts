@@ -8,6 +8,7 @@ import { LayoutModule } from '../layout/layout.module';
 import { LoginComponent } from './component/auth/login/login.component';
 import { AuthService } from '../core/auth.service';
 import { MainRoutingModule } from './main-routing.module';
+import { PrintDataService } from './services/main-service/print-data.service';
 import { ProfileDataService } from './services/main-service/profile-data.service';
 import { ProductService } from './services/main-service/product.service';
 import { SharedModule } from '../shared/shared.module';
@@ -27,6 +28,7 @@ import { SharedModule } from '../shared/shared.module';
     LoginComponent],
   providers: [
     AuthService,
+    PrintDataService,
     ProfileDataService,
     ProductService],
   bootstrap: [LoginComponent]

@@ -1,0 +1,68 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header" data-background-color="red">
+                        <h4 class="title">Product Create</h4>
+                        <p class="category">Here is a subtitle for this table</p>
+                    </div>
+                    <div class="card-content table-responsive">
+                        <form [formGroup]="entryForm">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <div class="label-reguler">Id</div>
+                                        <input type="text" class="form-control" placeholder="Id" formControlName="id">
+                                        <app-validation-form [values]="entryForm.controls.id"></app-validation-form>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <div class="label-reguler">Product name</div>
+                                        <input type="text" class="form-control" placeholder="Product Name" formControlName="productName">
+                                        <app-validation-form [values]="entryForm.controls.productName"></app-validation-form>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <div class="label-reguler">Start Year</div>
+                                        <input type="text" class="form-control" placeholder="Product name" formControlName="startYear">
+                                        <app-validation-form [values]="entryForm.controls.startYear"></app-validation-form>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <div class="label-reguler">End Year</div>
+                                        <input type="text" class="form-control" formControlName="endYear">
+                                        <app-validation-form [values]="entryForm.controls.endYear"></app-validation-form>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group form-black label-floating is-empty">
+                                        <div class="label-reguler">Price</div>
+                                        <input type="text" class="form-control" formControlName="price">
+                                        <app-validation-form [values]="entryForm.controls.price"></app-validation-form>
+                                    </div>
+                                </div>
+                            </div><br>
+                            <div style="float:right; margin-right: 100px; margin-top: -22px">
+                                <div (click)="onCancel(entryForm)" class="btn-close">
+                                    <div style='position:absolute; z-index:2;'>
+                                        <i class="fa fa-times-circle fa-close" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float:right; margin-right: 25px; margin-top: -22px">
+                                <div (click)="onCreateProduct(entryForm)" class="btn-create">
+                                    <div style='position:absolute; z-index:2;'>
+                                        <i class="fa fa-check-circle fa-create" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

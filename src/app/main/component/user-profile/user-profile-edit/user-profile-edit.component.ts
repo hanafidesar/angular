@@ -10,12 +10,11 @@ import { SpinnerService } from '../../../../shared/spinner/spinner.service';
 import { SweetalertService } from '../../../../shared/sweetalert/sweetalert.service';
 
 @Component({
-  selector: 'app-user-profile-main',
-  templateUrl: './user-profile-main.component.html',
-  styleUrls: ['./user-profile-main.component.scss']
+  selector: 'app-user-profile-edit',
+  templateUrl: './user-profile-edit.component.html',
+  styleUrls: ['./user-profile-edit.component.css']
 })
-
-export class UserProfileMainComponent implements OnInit {
+export class UserProfileEditComponent implements OnInit {
 
   entryForm: FormGroup;
   profile: Profile;
@@ -62,21 +61,22 @@ export class UserProfileMainComponent implements OnInit {
       });
   }
 
-  onPrint() {
-    const profile = this.entryForm.value
-    const data = {
-      'template': { 'name': 'Profile' },
-      'data': profile
-    };
-    this._printDataService.printProfileDetail(data);
+  onSave() {
+    if (this.entryForm.status === 'INVALID') {
+      this._sweetalertService.errorForm()
+    }
+    else {
+      const data = this.entryForm.value;
+      this._profileDataService.postProfile(data)
+        .subscribe(response => {
+          this._router.navigate(['/main/profile']);
+        }, (error) => {
+          this._sweetalertService.error();
+        })
+    }
   }
 
-  onFollow() {
-    this._sweetalertService.notWorkingYet();
+  onCancel() {
+    this._router.navigate(['/main/profile']);
   }
-
-  onUpdate() {
-    this._router.navigate(['/main/profile/edit']);
-  }
-
 }

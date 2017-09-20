@@ -4,11 +4,12 @@ import {
     RouterModule
 } from '@angular/router';
 
+import { UserProfileEditComponent } from './user-profile-edit/user-profile-edit.component';
 import { UserProfileMainComponent } from './user-profile-main/user-profile-main.component';
 
 const routes: Routes = [
     {
-        path: 'user-profile-main',
+        path: 'profile',
         data: {
             title: 'User Profile'
         },
@@ -19,7 +20,15 @@ const routes: Routes = [
                 data: {
                     title: 'User Profile'
                 }
-            } 
+            },
+            {
+                path: 'edit',
+                component: UserProfileEditComponent,
+                data: {
+                    title: 'Profile Edit',
+                    editing: true
+                }
+            }
         ]
     }
 ];

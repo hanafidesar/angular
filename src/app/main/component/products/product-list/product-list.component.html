@@ -4,19 +4,25 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header" data-background-color="red">
+                        <div style="float:right; margin-right: 25px; margin-top: -40px">
+                            <div (click)="goCreateProduct()" class="btn-create">
+                            <div style='position:absolute; z-index:2;'>
+                                <i class="fa fa-plus-circle fa-create" aria-hidden="true"></i></div>
+                            </div>
+                        </div>
                         <h4 class="title">Product list</h4>
                         <p class="category">Here is a subtitle for this table</p>
                     </div>
                     <div class="card-content table-responsive">
                         <p-dataTable [value]="product" [rows]="5" [paginator]="true" [pageLinks]="3">
                             <p-column field="id" header="Number"></p-column>
-                            <p-column field="nameProduct" header="Name Product"></p-column>
+                            <p-column field="productName" header="Name Product"></p-column>
                             <p-column field="startYear" header="Start Year"></p-column>
                             <p-column field="endYear" header="EndYear"></p-column>
                             <p-column field="price" header="Price"></p-column>
                             <p-column header="" [style]="{'text-align':'center'}">
                                 <template let-col let-table="rowData" let-ri="rowIndex" pTemplate="body">
-                                    <button pButton type="button" label="Edit"></button>
+                                    <button pButton type="button" (click)="goEditProduct(table.id);" label="Edit"></button>
                                 </template>
                             </p-column>
                         </p-dataTable>

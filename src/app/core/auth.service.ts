@@ -30,7 +30,7 @@ export class AuthService {
 
   login() {
     const headers = this.getDefaultHeaders();
-    return this._http.get('http://private-e6d027-hanafi.apiary-mock.com/token')
+    return this._http.get('http://localhost:3000/token')
       .map(response => response.json())
       .do(response => {
         this._localStorage.set('data', JSON.stringify(response));

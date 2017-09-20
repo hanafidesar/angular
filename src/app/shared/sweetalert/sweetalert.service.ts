@@ -29,4 +29,20 @@ export class SweetalertService {
       'info'
     );
   }
+
+  errorForm() {
+    swal(
+      'Error Input',
+      'Check your input form',
+      'error'
+    );
+  }
+
+  errorConnection() {
+    swal(
+      'Error Input',
+      'Check your internet connection',
+      'error'
+    );
+  }
 }
