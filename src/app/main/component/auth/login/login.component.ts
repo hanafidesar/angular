@@ -50,16 +50,16 @@ export class LoginComponent implements OnInit {
 
   validationLogin(value) {
     this._spinnerService.show('app-login');
-    this._authService.login()
-      .subscribe(response => {
+    // this._authService.login()
+    //   .subscribe(response => {
         this._spinnerService.hide('app-login');
         this._router.navigate(['/main/dashboard-main']);
-      },
-      (error) => {
-        this._spinnerService.hide('app-login');
-        const errorInfo = 'I think the problem is on your connection, make sure the connection is running as it should';
-        this._toastService.showToast(errorInfo);
-      });
+      // },
+      // (error) => {
+      //   this._spinnerService.hide('app-login');
+      //   const errorInfo = 'I think the problem is on your connection, make sure the connection is running as it should';
+      //   this._toastService.showToast(errorInfo);
+      // });
   }
 
 }
