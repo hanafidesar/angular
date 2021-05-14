@@ -34,7 +34,7 @@
     "core-js": "^2.5.1",
     "express": "^4.17.1",
     "font-awesome": "^4.7.0",
-    "googleapis": "21.3.0",
+    "googleapis": "39.1.0",
     "jquery": "^3.2.1",
     "jsreport-browser-client-dist": "^1.0.4",
     "moment": "^2.18.1",
