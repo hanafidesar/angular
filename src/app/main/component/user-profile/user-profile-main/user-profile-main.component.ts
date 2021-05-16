@@ -37,15 +37,16 @@ export class UserProfileMainComponent implements OnInit {
   buildForm() {
     this.entryForm = this._formBuilder.group({
       company: [''],
-      username: ['', Validators.required],
-      email: ['', [Validators.required, CustomValidators.email]],
-      firstname: [''],
-      lastname: [''],
-      address: [''],
-      city: [''],
-      country: [''],
-      postalCode: [''],
-      aboutMe: ['']
+      username: ['Hanafi', Validators.required],
+      email: ['hanafi.desar@gmail.com', [Validators.required, CustomValidators.email]],
+      firstname: ['Hanafi'],
+      lastname: ['Desar'],
+      address: ['Bandung, Indonesia'],
+      city: ['Bandung'],
+      country: ['Indonesian'],
+      postalCode: ['-'],
+      phone: ['081222194150'],
+      aboutMe: ['I am very interested in programming and enjoy my job. my career in programming, I am used to being required to be able to learn quickly. Starting as a technical support, I was trusted to be a programmer because of my curiosity and fast learning ability, then became a server administrator (Debian server), AWS and Azure. as well as being a web programmer and Cross Platform Mobile Application']
     });
   }
 
@@ -71,6 +72,12 @@ export class UserProfileMainComponent implements OnInit {
     this._printDataService.printProfileDetail(data);
   }
 
+  goGithub(){
+    window.open('https://github.com/hanafidesar', '_blank');
+  }
+  goLinkedIn(){
+    window.open('https://www.linkedin.com/in/hanafi-desar-1b1b5b18b/', '_blank');
+  }
   onFollow() {
     this._sweetalertService.notWorkingYet();
   }
