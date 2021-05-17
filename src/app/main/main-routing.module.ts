@@ -28,6 +28,10 @@ const routes: Routes = [
             {
                 path: '',
                 loadChildren: 'app/main/component/company/company.module#CompanyModule'
+            },
+            {
+                path: '',
+                loadChildren: 'app/main/component/work-experiance/work-experiance.module#WorkExperianceModule'
             }]
     },
     {
