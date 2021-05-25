@@ -37,15 +37,15 @@ export class UserProfileMainComponent implements OnInit {
   buildForm() {
     this.entryForm = this._formBuilder.group({
       company: [''],
-      username: ['Hanafi', Validators.required],
-      email: ['hanafi.desar@gmail.com', [Validators.required, CustomValidators.email]],
-      firstname: ['Hanafi'],
-      lastname: ['Desar'],
-      address: ['Bandung, Indonesia'],
-      city: ['Bandung'],
-      country: ['Indonesian'],
+      username: ['', Validators.required],
+      email: ['', [Validators.required, CustomValidators.email]],
+      firstname: [''],
+      lastname: [''],
+      address: [''],
+      city: [''],
+      country: [''],
       postalCode: ['-'],
-      phone: ['081222194150'],
+      phone: [''],
       aboutMe: ['I am very interested in programming and enjoy my job. my career in programming, I am used to being required to be able to learn quickly. Starting as a technical support, I was trusted to be a programmer because of my curiosity and fast learning ability, then became a server administrator (Debian server), AWS and Azure. as well as being a web programmer and Cross Platform Mobile Application']
     });
   }

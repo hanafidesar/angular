@@ -23,7 +23,7 @@ export class ProfileDataService {
   }
 
   getProfile() {
-    return this._http.get('http://localhost:3000/profile')
+    return this._http.get('https://api-rails-hanafi.herokuapp.com/profiles')
       .map(response => response.json());
   }
 
