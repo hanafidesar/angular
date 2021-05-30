@@ -25,10 +25,16 @@ export class WorkExperianceComponent implements OnInit {
           
           let ws = new Date(parseInt(Date.parse(x.work_start).toString()))
           let we = new Date(parseInt(Date.parse(x.work_end || new Date).toString()))
-          
           x.work_start = `${ws.getDate()}/${ws.getMonth()}/${ws.getFullYear()}`
           x.work_end = `${we.getDate()}/${we.getMonth()}/${we.getFullYear()}`
           
+          var startStamp = ws.getTime();
+          var newStamp = we.getTime();
+          var diff = Math.round((newStamp-startStamp)/1000);
+          var d = Math.floor(diff/(24*60*60)); /* though I hope she won't be working for consecutive days :) */
+          // diff = diff-(d*24*60*60);
+          
+          x.total_month = Math.ceil(d/30)
           return x
         })
         
