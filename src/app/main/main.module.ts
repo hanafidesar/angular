@@ -10,6 +10,7 @@ import { AuthService } from '../core/auth.service';
 import { MainRoutingModule } from './main-routing.module';
 import { PrintDataService } from './services/main-service/print-data.service';
 import { ProfileDataService } from './services/main-service/profile-data.service';
+import { ExperinceDataService } from './services/main-service/experience-data.service';
 import { ProductService } from './services/main-service/product.service';
 import { SharedModule } from '../shared/shared.module';
 
@@ -30,7 +31,8 @@ import { SharedModule } from '../shared/shared.module';
     AuthService,
     PrintDataService,
     ProfileDataService,
-    ProductService],
+    ProductService,
+    ExperinceDataService],
   bootstrap: [LoginComponent]
 })
 
