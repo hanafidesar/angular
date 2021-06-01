@@ -18,11 +18,12 @@ export class SpinnerService {
       display: 'block',
       'min-height': '100vh'
     }).append(this.spinnerElement);
-
+    $(selector).find('.card').css('height','100vh');
     return this.hide.bind(this, selector);
   }
 
   hide(selector: any) {
+    $(selector).find('.card').css('height','auto');
     $(selector).find('.spinner').remove();
   }
 }

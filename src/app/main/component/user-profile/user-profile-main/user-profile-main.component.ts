@@ -81,9 +81,11 @@ export class UserProfileMainComponent implements OnInit {
   onFollow() {
     this._sweetalertService.notWorkingYet();
   }
-
   onUpdate() {
     this._router.navigate(['/main/profile/edit']);
+  }
+  openFile() {
+    window.open('https://drive.google.com/file/d/1eEDdYGbMlp8U64OGoLJu58Lkv9qbkmxm/view?usp=sharing', '_blank');
   }
 
 }

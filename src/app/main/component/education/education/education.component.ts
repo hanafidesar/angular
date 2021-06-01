@@ -23,7 +23,7 @@ export class EducationComponent implements OnInit {
         this.educations = response.map(function(x){
           
           let ws = new Date(parseInt(Date.parse(x.education_start).toString()))
-          let we = new Date(parseInt(Date.parse(x.educati_end || new Date).toString()))
+          let we = new Date(parseInt(Date.parse(x.education_end || new Date).toString()))
           x.education_start = `${ws.getDate()}/${ws.getMonth()}/${ws.getFullYear()}`
           x.education_end = `${we.getDate()}/${we.getMonth()}/${we.getFullYear()}`
 
