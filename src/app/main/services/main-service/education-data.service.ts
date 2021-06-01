@@ -23,13 +23,13 @@ export class EducationDataService {
   }
 
   getEducation() {
-    return this._http.get('http://localhost:3000/educations')
+    return this._http.get('https://api-rails-hanafi.herokuapp.com/educations')
       .map(response => response.json());
   }
 
   postEducation(data) {
     const headers = this.getDefaultHeaders();
-    return this._http.post('https://api-rails-hanafi.herokuapp.com/experiences', data, { headers: headers })
+    return this._http.post('https://api-rails-hanafi.herokuapp.com/educations', data, { headers: headers })
       .map(response => response.json());
   }
 }
