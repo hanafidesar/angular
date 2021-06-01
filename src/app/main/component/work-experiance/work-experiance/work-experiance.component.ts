@@ -1,10 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild, NgZone, Inject } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-
-import { MapsAPILoader } from '@agm/core';
-
-
 import { ExperinceDataService } from '../../../services/main-service/experience-data.service';
+import { SpinnerService } from '../../../../shared/spinner/spinner.service';
 @Component({
   selector: 'app-work-experiance',
   templateUrl: './work-experiance.component.html',
@@ -14,11 +11,12 @@ export class WorkExperianceComponent implements OnInit {
   experiences: any;
   @ViewChild('search') public searchElementRef: ElementRef;
   constructor(
-    private _mapsAPILoader: MapsAPILoader,
+    private _spinnerService: SpinnerService,
     public _expereince_data_service: ExperinceDataService,
     @Inject(NgZone) private zone: NgZone) { }
 
   ngOnInit() {
+    this._spinnerService.show('app-work-experiance');
     this._expereince_data_service.getExperience()
       .subscribe(response => {
         let y = response.map(function(x){
@@ -46,6 +44,7 @@ export class WorkExperianceComponent implements OnInit {
         //   console.log(value); // 9, 2, 5
         //   var x = this.getDates(value.work_start, value.work_end)
         // });
+        this._spinnerService.hide('app-work-experiance');
 
       },
       (error) => {

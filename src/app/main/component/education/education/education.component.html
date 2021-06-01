@@ -1,0 +1,37 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header" data-background-color="red">
+                        <h4 class="title">Education</h4>
+                        <p class="category">Education info</p>
+                    </div>
+
+                    <div class="card-content" *ngFor="let education of educations" >
+                                              
+                      <div class="card">
+                        <div class="card-header" >
+                          <p class="category">
+                            {{education.university_name}}  ( {{education.education_start}} - {{education.education_end}} )
+                          </p>
+                        </div>
+                        <div class="card-content">
+                          <span>{{education.level}}</span>
+                          <span *ngIf="education.major && education.level"> - </span>
+                          <span>{{education.major}}</span>
+                          <hr style="margin-bottom: 1rem;margin-top: 1rem;">
+                          <p *ngIf="education.ipk"><b>IPK :</b> {{education.ipk}}</p>
+                          <p *ngIf="education.organisasi"><b>Organisasi :</b> {{education.organisasi}}</p>
+                          <p *ngIf="education.description">{{education.description}}</p>
+                          <button class="btn btn-danger text-white" *ngIf="education.cv" (click)="openFile(education.cv)">CV</button>
+                          <button class="btn btn-danger text-white" *ngIf="education.ijazah" (click)="openFile(education.ijazah)">Ijazah</button>
+                          <button class="btn btn-danger text-white" *ngIf="education.transcript_nilai" (click)="openFile(education.transcript_nilai)">Transcript Value</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

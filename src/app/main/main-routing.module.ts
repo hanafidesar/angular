@@ -32,6 +32,10 @@ const routes: Routes = [
             {
                 path: '',
                 loadChildren: 'app/main/component/work-experiance/work-experiance.module#WorkExperianceModule'
+            },
+            {
+                path: '',
+                loadChildren: 'app/main/component/education/education.module#EducationModule'
             }]
     },
     {
