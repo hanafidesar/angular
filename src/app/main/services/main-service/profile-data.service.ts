@@ -1,11 +1,13 @@
 import { Http, Headers, Response } from '@angular/http';
 import { Injectable } from '@angular/core';
+import { AppApi } from '../../../../app.api';
 
 @Injectable()
 export class ProfileDataService {
 
   constructor(private _http: Http) { }
 
+  apiUrl = AppApi.BASE_API_URL;
   getDefaultHeaders(): Headers {
     const headers = new Headers();
     headers.append('Accept-Language', 'en_US');
@@ -23,7 +25,7 @@ export class ProfileDataService {
   }
 
   getProfile() {
-    return this._http.get('https://api-rails-hanafi.herokuapp.com/profiles')
+    return this._http.get(this.apiUrl + 'profiles')
       .map(response => response.json());
   }
 

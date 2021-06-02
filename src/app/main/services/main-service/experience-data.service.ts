@@ -1,9 +1,11 @@
 import { Http, Headers, Response } from '@angular/http';
 import { Injectable } from '@angular/core';
+import { AppApi } from '../../../../app.api';
 
 @Injectable()
 export class ExperinceDataService {
 
+  apiUrl = AppApi.BASE_API_URL;
   constructor(private _http: Http) { }
 
   getDefaultHeaders(): Headers {
@@ -23,7 +25,7 @@ export class ExperinceDataService {
   }
 
   getExperience() {
-    return this._http.get('https://api-rails-hanafi.herokuapp.com/experiences')
+    return this._http.get(this.apiUrl + 'experiences')
       .map(response => response.json());
   }
 

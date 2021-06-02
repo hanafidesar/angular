@@ -1,11 +1,13 @@
 import { Http, Headers, Response } from '@angular/http';
 import { Injectable } from '@angular/core';
+import { AppApi } from '../../../../app.api';
 
 @Injectable()
 export class EducationDataService {
 
   constructor(private _http: Http) { }
 
+  apiUrl = AppApi.BASE_API_URL;
   getDefaultHeaders(): Headers {
     const headers = new Headers();
     headers.append('Accept-Language', 'en_US');
@@ -23,7 +25,7 @@ export class EducationDataService {
   }
 
   getEducation() {
-    return this._http.get('https://api-rails-hanafi.herokuapp.com/educations')
+    return this._http.get(this.apiUrl + 'educations')
       .map(response => response.json());
   }
 
